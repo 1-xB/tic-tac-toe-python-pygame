@@ -32,6 +32,7 @@ word_big = pygame.image.load('imgs/tic.png')
 word = pygame.transform.scale(word_big, (word_big.get_width() / 1.9, word_big.get_height() / 1.9))
 
 font = pygame.font.Font('font/PixelifySans-VariableFont_wght.ttf', 80)
+font2 = pygame.font.Font('font/PixelifySans-VariableFont_wght.ttf', 12)
 
 play_big = pygame.image.load('imgs/play.png')
 play = pygame.transform.scale(play_big, (play_big.get_width() / 3, play_big.get_height() / 3))
@@ -75,6 +76,8 @@ o_ = pygame.image.load('imgs/o.png')
 o = pygame.transform.scale(o_, (95, 95))
 x_ = pygame.image.load('imgs/x.png')
 x = pygame.transform.scale(x_, (95, 95))
+
+Author = font2.render('Game created by Piotr Zarzycki', True, 'black')
 
 choice = [
     ['0', '0', '0'],
@@ -350,7 +353,7 @@ while True:
             screen.blit(restart, restart_rect)
             screen.blit(quit, quit_rect)
             kolei = font.render('Draw', True, 'black')
-            screen.blit(kolei, (110, 10))
+            screen.blit(kolei, (115, 10))
 
         pygame.draw.line(screen, 'black', (100, 200), (400, 200), 5)
         pygame.draw.line(screen, 'black', (100, 300), (400, 300), 5)
@@ -436,6 +439,8 @@ while True:
         screen.blit(play, play_rect)
         screen.blit(word, (10, 20))
         screen.blit(quit, quit_rect)
+        screen.blit(Author, (0, 485))
+
 
     clock.tick(60)
     pygame.display.update()
